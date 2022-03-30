@@ -19,20 +19,41 @@
     </h1>
 
     <div class="brands">
-        <label for="shop_id" class="w-7">Brands</label>
+        <label for="shop_id" class="w-7">Brands :</label>
         <select name="shop_id" class="make" id="">
             <option value="">Select brand</option>
         </select>
     </div>
 
     <div class="brand">
-        <label for="shop_id" class="w-7">Colours</label>
+        <label for="shop_id" class="w-7">Colours :</label>
         <select name="shop_id" class="colours" id="">
             <option value="">Select colour</option>
         </select>
     </div>
 
-    <button type="button">filter</button>
+   <div class="btn"> <button type="button" onclick="check()">filter</button></div>
+
+    <script class="entry-template" type="text/x-handlebars-template">
+              <table class="car">
+                <tr>
+                    <th>Car</th>
+                    <th>Color</th>
+                    <th>Make</th>
+                </tr>
+                {{#each car}}
+                <tr>
+                  <td class="">{{reg}}</td>
+                  <td class="">{{colour}}</td>
+                  <td class="">{{brand}}</td>
+                </tr>
+                {{/each}}
+
+            </table>   
+    </script>
+
+    <div class="displayCars"></div>
+
 </body>
 
 <script src="./index.js"></script>
