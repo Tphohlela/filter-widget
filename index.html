@@ -32,24 +32,27 @@
         </select>
     </div>
 
-   <div class="btn"> <button type="button" onclick="check()">filter</button></div>
+    <div class="btn"> <button type="button" onclick="check()">filter</button></div>
 
     <script class="entry-template" type="text/x-handlebars-template">
-              <table class="car">
-                <tr>
-                    <th>Car</th>
-                    <th>Color</th>
-                    <th>Make</th>
-                </tr>
-                {{#each car}}
-                <tr>
-                  <td class="">{{reg}}</td>
-                  <td class="">{{colour}}</td>
-                  <td class="">{{brand}}</td>
-                </tr>
-                {{/each}}
-
-            </table>   
+        {{#if table}}
+            <h5>Sorry, but there is no cars that match your search</h5>
+        {{else}}
+        <table class="car">
+            <tr>
+                <th>Car</th>
+                <th>Color</th>
+                <th>Make</th>
+            </tr>
+        {{#each car}}
+            <tr>
+                <td class="">{{reg}}</td>
+                 <td class="">{{colour}}</td>
+                 <td class="">{{brand}}</td>
+            </tr>
+         {{/each}}
+        </table>   
+        {{/if}}       
     </script>
 
     <div class="displayCars"></div>
@@ -57,4 +60,5 @@
 </body>
 
 <script src="./index.js"></script>
+
 </html>
